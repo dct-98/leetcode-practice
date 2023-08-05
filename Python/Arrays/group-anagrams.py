@@ -14,7 +14,7 @@ class Solution:
         #           add sorted word into dictionary with empty array as it's value
         #       add word into sorted word array
         #   return array of dictionary values
-        
+
         unique_strs = {}
 
         for word in strs:
