@@ -4,12 +4,18 @@ class Solution:
         result = []
         n = len(nums)
 
+        if n < 3:
+            return []
+
         if nums[0] > 0 or nums[-1] < 0 or (nums[0] + nums[1] + nums[2] > 0) or (nums[-1] + nums[-2] + nums[-3] < 0):
             return result
-        for i in range(len(nums)):
+        for i in range(n):
             # Avoiding duplicates
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
+
+            if nums[i] > 0:
+                break
 
             left = i + 1
             right = n - 1
@@ -36,4 +42,3 @@ class Solution:
                     right -= 1
 
         return result
-
